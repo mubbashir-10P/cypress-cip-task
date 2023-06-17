@@ -1,6 +1,6 @@
 import loginPage from "../../pageObjects/loginPO/loginPage";
 describe('Verify Login functionality of Orange HRM System',() =>{
-    before(function(){
+    beforeEach(function(){
         cy.fixture('testData').then(webUrl => {
             const url = webUrl.baseUrl;
             cy.visit(url);
@@ -15,10 +15,20 @@ describe('Verify Login functionality of Orange HRM System',() =>{
 
             loginPage.enterUserName(username);
             loginPage.enterPassword(password);
+            loginPage.clickLoginButton();
+            loginPage.verifyLoginIsSuccessfull();
         })
     })
 
-    it.skip("Should not be able to login to system with wrong credentials", ()=>{
-        
+    it("Should not be able to login to system with wrong credentials", ()=>{
+       
+            const username = "wrongUsername";
+            const password = "wrongPassword";
+
+            loginPage.enterUserName(username);
+            loginPage.enterPassword(password);
+            loginPage.clickLoginButton();
+            loginPage.verifyInvalidLoginErrorMessage();
+       
     })
 })

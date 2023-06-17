@@ -23,3 +23,28 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('isVisible', selector =>{
+    cy.get(selector,{ timeout: 10000 }).should('be.visible')
+})
+
+Cypress.Commands.add('isHidden', selector =>{
+    cy.get(selector,{ timeout: 10000 }).should('not.exist')
+})
+
+Cypress.Commands.add('setResolution', size =>{
+    if(Cypress._.isArray(size)){
+        cy.viewport(size[0],size[1])
+    }
+    else{
+        cy.viewport(size)
+    }
+})
+
+Cypress.Commands.add('isDisable', selector =>{
+    cy.get(selector,{ timeout: 10000 }).should('be.disabled')
+})
+
+
+Cypress.Commands.add('isEnable', selector =>{
+    cy.get(selector,{ timeout: 10000 }).should('be.enabled')
+})

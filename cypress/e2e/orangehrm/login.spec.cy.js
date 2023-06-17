@@ -31,4 +31,12 @@ describe('Verify Login functionality of Orange HRM System',() =>{
             loginPage.verifyInvalidLoginErrorMessage();
        
     })
+
+    it("Should verify that required field message show when click on Login button only.", ()=> {
+        loginPage.clickLoginButton();
+        loginPage.getRequiredFieldErrorMessage();
+        //expect (loginPage.getRequiredFieldErrorMessage()).to.equal(2);
+
+    
+    })
 })

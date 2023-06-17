@@ -1,3 +1,4 @@
+import { expect } from "chai";
 import BasePage from "../basePage";
 
 export default class loginPage extends BasePage{
@@ -20,6 +21,14 @@ export default class loginPage extends BasePage{
     }
 
     static verifyInvalidLoginErrorMessage(){
+        cy.isVisible("div.oxd-alert--error p.oxd-text")
         cy.get("div.oxd-alert--error p.oxd-text").should('contain.text',"Invalid credentials");
+        
+    }
+
+    static getRequiredFieldErrorMessage(){
+        cy.get("body").then($body => {
+            expect($body.find("span.oxd-input-field-error-message").filter(':visible').length).to.equal(2);
+        });        
     }
 }

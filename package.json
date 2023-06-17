@@ -4,11 +4,16 @@
   "description": "CIP goal to review in upcoming CIP",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "keywords": [
     "automation"
   ],
   "author": "Mubbashir Shakil 3067",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.14.0",
+    "prettier": "^2.8.8"
+  }
 }

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "cy:run-dashboard": "npx cypress run --record --key 825b0c57-3c2c-429c-bcc4-4ab5ff9d1d40"
   },
   "keywords": [
     "automation"
@@ -15,5 +16,8 @@
   "dependencies": {
     "cypress": "^12.14.0",
     "prettier": "^2.8.8"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7"
   }
 }

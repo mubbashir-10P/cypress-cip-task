@@ -130,4 +130,5 @@ dist
 .pnp.*
 cypress/downloads
 cypress/screenshots
-cypress/videos
+#cypress/videos
+*.mp4
